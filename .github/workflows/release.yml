@@ -36,6 +36,7 @@ jobs:
             echo "resource-pack=https://github.com/${GITHUB_REPOSITORY}/releases/download/${tag}/resource-pack.zip"
             echo "resource-pack-sha1=$hash"
             echo 'require-resource-pack=true'
+            echo 'resource-pack-prompt={"text":"Hyris","color":"gold","extra":[{"text":" - Aceite o pacote de texturas para ver tags e itens.","color":"gray"}]}'
             echo '```'
           } > release-notes.md
           options=(--target "$GITHUB_SHA" --title "$tag" --notes-file release-notes.md)

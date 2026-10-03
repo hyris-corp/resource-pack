@@ -15,6 +15,7 @@ Exemplo de configuração:
 resource-pack=https://github.com/hyris-corp/resource-pack/releases/download/main-<SHA>/resource-pack.zip
 resource-pack-sha1=<conteúdo de resource-pack.sha1>
 require-resource-pack=true
+resource-pack-prompt={"text":"Hyris","color":"gold","extra":[{"text":" - Aceite o pacote de texturas para ver tags e itens.","color":"gray"}]}
 ```
 
 O repositório precisa ser público para o cliente do Minecraft baixar o ZIP sem autenticação.
