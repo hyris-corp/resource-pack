@@ -26,6 +26,15 @@
             "chars": [
                 ""
             ]
+        },
+        {
+            "type": "bitmap",
+            "file": "minecraft:font/ranks/practice_long_text.png",
+            "ascent": 16,
+            "height": 16,
+            "chars": [
+                ""
+            ]
         }
     ]
 }
