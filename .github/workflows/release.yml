@@ -1,0 +1,36 @@
+name: Publish resource pack
+
+on:
+  push:
+    branches: [dev, main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build resource pack
+        run: |
+          python3 -m json.tool pack.mcmeta > /dev/null
+          python3 -m json.tool assets/minecraft/font/default.json > /dev/null
+          python3 -m zipfile -c resource-pack.zip pack.mcmeta pack.png assets
+          python3 -m zipfile -t resource-pack.zip
+          sha1sum resource-pack.zip | cut -d ' ' -f 1 > resource-pack.sha1
+
+      - name: Publish branch release
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          tag="${GITHUB_REF_NAME}-${GITHUB_SHA:0:12}"
+          options=(--target "$GITHUB_SHA" --title "$tag" --notes "Resource pack from $GITHUB_REF_NAME at $GITHUB_SHA")
+          if [[ "$GITHUB_REF_NAME" == dev ]]; then
+            options+=(--prerelease --latest=false)
+          else
+            options+=(--latest)
+          fi
+          gh release create "$tag" resource-pack.zip resource-pack.sha1 "${options[@]}"

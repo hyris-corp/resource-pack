@@ -1,0 +1,31 @@
+{
+    "providers": [
+        {
+            "type": "bitmap",
+            "file": "minecraft:font/ranks/hyris_full_64.png",
+            "ascent": 32,
+            "height": 32,
+            "chars": [
+                ""
+            ]
+        },
+        {
+            "type": "bitmap",
+            "file": "minecraft:font/ranks/rank_melo.png",
+            "ascent": 8,
+            "height": 8,
+            "chars": [
+                ""
+            ]
+        },
+        {
+            "type": "bitmap",
+            "file": "minecraft:font/ranks/logo_blockbench.png",
+            "ascent": 16,
+            "height": 16,
+            "chars": [
+                ""
+            ]
+        }
+    ]
+}
