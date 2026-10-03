@@ -27,7 +27,18 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           tag="${GITHUB_REF_NAME}-${GITHUB_SHA:0:12}"
-          options=(--target "$GITHUB_SHA" --title "$tag" --notes "Resource pack from $GITHUB_REF_NAME at $GITHUB_SHA")
+          read -r hash < resource-pack.sha1
+          {
+            echo "Resource pack da branch $GITHUB_REF_NAME, commit $GITHUB_SHA."
+            echo
+            echo 'Configuração pronta para o server.properties:'
+            echo '```properties'
+            echo "resource-pack=https://github.com/${GITHUB_REPOSITORY}/releases/download/${tag}/resource-pack.zip"
+            echo "resource-pack-sha1=$hash"
+            echo 'require-resource-pack=true'
+            echo '```'
+          } > release-notes.md
+          options=(--target "$GITHUB_SHA" --title "$tag" --notes-file release-notes.md)
           if [[ "$GITHUB_REF_NAME" == dev ]]; then
             options+=(--prerelease --latest=false)
           else

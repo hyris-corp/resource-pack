@@ -7,6 +7,7 @@ As Releases de `dev` são pré-lançamentos; as de `main` são lançamentos est�
 O arquivo para o Minecraft é o asset `resource-pack.zip` da Release, não o
 arquivo “Source code (zip)” criado automaticamente pelo GitHub. O asset
 `resource-pack.sha1` contém o hash para `resource-pack-sha1` no `server.properties`.
+Cada Release também mostra a configuração completa do `server.properties` na descrição.
 
 Exemplo de configuração:
 
