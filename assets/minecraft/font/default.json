@@ -39,7 +39,7 @@
         {
             "type": "bitmap",
             "file": "minecraft:font/ui/icon_left_click.png",
-            "ascent": 14,
+            "ascent": 12,
             "height": 16,
             "chars": [
                 ""
@@ -48,7 +48,7 @@
         {
             "type": "bitmap",
             "file": "minecraft:font/ui/icon_right_click.png",
-            "ascent": 14,
+            "ascent": 12,
             "height": 16,
             "chars": [
                 ""
