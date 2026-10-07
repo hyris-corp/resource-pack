@@ -2,7 +2,7 @@
     "providers": [
         {
             "type": "bitmap",
-            "file": "minecraft:font/ranks/hyris_full_64.png",
+            "file": "minecraft:font/logos/hyris_full_64.png",
             "ascent": 32,
             "height": 32,
             "chars": [
@@ -20,7 +20,7 @@
         },
         {
             "type": "bitmap",
-            "file": "minecraft:font/ranks/logo_blockbench.png",
+            "file": "minecraft:font/logos/logo_blockbench.png",
             "ascent": 16,
             "height": 16,
             "chars": [
@@ -29,7 +29,7 @@
         },
         {
             "type": "bitmap",
-            "file": "minecraft:font/ranks/practice_long_text.png",
+            "file": "minecraft:font/logos/practice_long_text.png",
             "ascent": 16,
             "height": 16,
             "chars": [
